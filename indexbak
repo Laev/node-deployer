@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+const program = require("commander");
+const chalk = require("chalk");
+
+// version
+program
+  .version(chalk.green(`${require("./package.json").version}`))
+  .usage("<command> [options]");
+
+// initialization
+program
+  .command("init")
+  .description("create a config file in your project")
+  // .option() // TODO mode(default自动生成 guide引导模式)
+  .action((name, options) => {
+    require("./lib/creator").default(name, options);
+  });
+
+// start upload
+program
+  .command("start")
+  .description("start upload task")
+  // .option() // TODO 补充参数（对一些关键性参数的修改，如server)
+  .action((name, options) => {
+    require("./lib/uploader").default(name, options);
+  });
+
+// display help information when entering unknown commands
+program.on("command:*", ([cmd]) => {
+  program.outputHelp();
+  console.log(`\n${chalk.red(`Unknown command ${chalk.yellow(cmd)}\n`)}`);
+  require("./lib/suggestCommands").default(cmd);
+  process.exitCode = 1;
+});
+
+program.parse(process.argv);
