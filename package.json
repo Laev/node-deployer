@@ -1,6 +1,6 @@
 {
   "name": "@gdyfe/node-deployer",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The deployer running in the node and upload the project to the remote",
   "main": "lib/index.js",
   "scripts": {
