@@ -8,7 +8,7 @@ import inquirer from 'inquirer';
 const projectRoot = process.cwd();
 const defConfigName = 'deployer.config.js'
 const targetFile = path.resolve(projectRoot, defConfigName)
-const repoPath = 'https://gist.githubusercontent.com/Laev/42368d3e95b3f6263ed52176ab462831/raw/ec014ff0c8109ac33dbe2deb27ae71c93a577ff5/deployer.config.js'
+const repoPath = 'https://gist.githubusercontent.com/Laev/42368d3e95b3f6263ed52176ab462831/raw/deployer.config.js'
 
 function downloadConfigTemplate() {
   const spinner = ora('Start cloning template...')
