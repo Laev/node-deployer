@@ -3,7 +3,7 @@ import chalk from 'chalk';
 
 import type { Ora } from 'ora';
 
-type files = Array<any>
+type files = any[]
 type configs = {}
 
 class Huawei {

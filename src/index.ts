@@ -1,8 +1,8 @@
 import program from 'commander'
 import chalk from 'chalk'
-import creator from "./creator"
-import uploader from "./uploader"
-import suggestCommands from "./suggestCommands"
+import creator from "./plugins/creator"
+import uploader from "./plugins/uploader"
+import suggestCommands from "./plugins/suggestCommands"
 
 // version
 program
@@ -23,8 +23,8 @@ program
   .command("start")
   .description("start upload task")
   // .option() // TODO 补充参数（对一些关键性参数的修改，如server)
-  .action((name, options) => {
-    uploader(name, options);
+  .action(async (name, options) => {
+    await uploader(name, options);
     // 动态import写法
     // const { default: uploader } = await import('./uploader');
     // uploader(name, options)

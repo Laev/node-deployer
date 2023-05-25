@@ -2,9 +2,9 @@ import aliOss from 'ali-oss';
 import ora from 'ora';
 import pAll from 'p-all';
 import chalk from 'chalk';
-import consoleTable from '../utils/consoleTable'
-import { _typeof } from '../utils/common'
-import Plugins from './index'
+import consoleTable from '../../utils/consoleTable'
+import { _typeof } from '../../utils/common'
+import Plugins from '../index'
 
 import type { Options, ListBucketsQueryType, PutObjectResult } from 'ali-oss';
 import type { Entry } from 'globby'

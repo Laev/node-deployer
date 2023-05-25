@@ -5,10 +5,10 @@ import inquirer from 'inquirer';
 import globby from 'globby';
 import PQueue from 'p-queue';
 
-import { _typeof } from './utils/common'
-import Ali from './plugins/ali'
-import Huawei from './plugins/huawei'
-import SFTP from './plugins/sftp'
+import { _typeof } from '../utils/common'
+import Ali from './providers/ali'
+import Huawei from './providers/huawei'
+import SFTP from './providers/sftp'
 
 import type { Options, ListBucketsQueryType } from 'ali-oss';
 
@@ -64,7 +64,7 @@ async function uploader(name: any, options: any) {
   }
 
   const supported: Service[] = [];
-  const notSupported: Array<string> = [];
+  const notSupported: string[] = [];
   (server as Service[]).forEach((item) => {
     if (defService.includes(item)) {
       supported.push(item)

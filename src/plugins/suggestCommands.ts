@@ -8,8 +8,7 @@ function suggestCommands(unknownCommand: string) {
   let suggestion: string = '';
 
   availableCommands.forEach((cmd) => {
-    const isBestMatch =
-      leven(cmd, unknownCommand) < leven(suggestion || "", unknownCommand);
+    const isBestMatch = leven(cmd, unknownCommand) < leven(suggestion || "", unknownCommand);
     if (leven(cmd, unknownCommand) < 3 && isBestMatch) {
       suggestion = cmd;
     }

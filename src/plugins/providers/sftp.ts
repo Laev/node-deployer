@@ -3,11 +3,11 @@ import ora from 'ora';
 import pAll from 'p-all';
 import fs from 'fs-extra'
 import chalk from 'chalk';
-import Plugins from './index'
-import consoleTable from '../utils/consoleTable'
-import { _typeof } from '../utils/common'
+import Plugins from '../index'
+import consoleTable from '../../utils/consoleTable'
+import { _typeof } from '../../utils/common'
 
-type files = Array<any>
+type files = any[]
 type IConfigs = {
   name: string
   host: string
